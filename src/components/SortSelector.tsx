@@ -14,14 +14,15 @@ interface Props {
 const SortSelector = ({ selectedOrdering, onSelectedOrdering }: Props) => {
   const orderings = [
     { label: 'Relevance', value: '' },
-    { label: 'Name', value: 'name' },
-    { label: 'Release date', value: '-released' },
-    { label: 'Date Added', value: '-added' },
-    { label: 'Created Date', value: '-created' },
-    { label: 'Updated Date', value: '-updated' },
-    { label: 'Average Rating', value: 'rating' },
-    { label: 'Popularity', value: '-metacritic' },
+    { label: 'Featured', value: '1' },
+    { label: 'New Arrivals', value: '2' },
+    { label: 'Best Sellers', value: '3' },
+    { label: 'Price Low-High', value: '4' },
+    { label: 'Price High-Low', value: '5' },
+    { label: 'Highest Rated', value: '6' },
+    { label: 'Percent Off', value: '7' },
   ];
+
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>

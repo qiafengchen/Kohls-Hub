@@ -31,6 +31,7 @@ const useProducts = (gameQuery: GameQuery) => {
         keyword: `${gameQuery?.searchText || ''} ${
           gameQuery?.category?.name || ''
         }`,
+        sortID: gameQuery?.ordering?.value,
       },
     },
     [gameQuery]
