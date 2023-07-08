@@ -5,11 +5,12 @@ import { CanceledError } from 'axios';
 
 interface FetchResponse<T> {
   count: number;
-  results: T[];
+  payload: any;
 }
 
 const useData = <T>(
   endpoint: string,
+  item: string,
   requestConfig?: AxiosRequestConfig,
   deps?: any[]
 ) => {
@@ -28,7 +29,7 @@ const useData = <T>(
           ...requestConfig,
         })
         .then((res) => {
-          setData(res.data.results);
+          setData(res.data.payload[item]);
           setIsLoading(false);
         })
         .catch((err) => {
