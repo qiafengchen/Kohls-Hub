@@ -1,0 +1,10 @@
+form {
+  width: 100%;
+}
+.gameGrid > div {
+  cursor: pointer;
+  min-height: 390px;
+}
+.gameGrid > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
