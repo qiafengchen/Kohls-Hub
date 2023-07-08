@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Flex, Grid, GridItem, HStack, Show } from '@chakra-ui/react';
 import NavBar from './components/NavBar';
-import GameGrid from './components/GameGrid';
+import ProductGrid from './components/ProductGrid';
 import GenreList from './components/CategoryList';
 import { Category } from './hooks/useCategories';
 import SortSelector, { Order } from './components/SortSelector';
-import GameHeading from './components/GameHeading';
+import GameHeading from './components/ProductHeading';
 
 export interface GameQuery {
   category: Category | null;
@@ -54,7 +54,7 @@ function App() {
             />
           </Flex>
         </Box>
-        <GameGrid gameQuery={gameQuery} />
+        <ProductGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
   );

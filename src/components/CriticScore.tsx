@@ -4,7 +4,8 @@ interface Props {
   score: number;
 }
 const CriticScore = ({ score }: Props) => {
-  let color = score > 75 ? 'green' : score > 60 ? 'yellow' : '';
+  let color =
+    score > 4 ? 'green' : score > 3 ? 'blue' : score > 3 ? 'yellow' : 'red';
 
   return (
     <Badge

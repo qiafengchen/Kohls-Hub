@@ -5,10 +5,10 @@ import { GameQuery } from '../App';
 interface Props {
   gameQuery: GameQuery;
 }
-const GameHeading = ({ gameQuery }: Props) => {
-  const heading = `${gameQuery.platform?.name || ''} ${
-    gameQuery.genre?.name || ''
-  } Game`;
+const ProductHeading = ({ gameQuery }: Props) => {
+  const heading = `${gameQuery.category?.name || ''} ${
+    gameQuery.category?.name || ''
+  } Products`;
 
   return (
     <Heading as="h1" marginY={5} fontSize={'5xl'}>
@@ -17,4 +17,4 @@ const GameHeading = ({ gameQuery }: Props) => {
   );
 };
 
-export default GameHeading;
+export default ProductHeading;
