@@ -38,10 +38,12 @@ const ProductCard = ({ product }: Props) => {
                 : `$${product.prices[0].regularPrice.minPrice}`}
             </Text>
           </Box>
-          <Box display={'flex'}>
-            <Text marginRight={1}>Rating:</Text>{' '}
-            <CriticScore score={product.rating.avgRating} />
-          </Box>
+          {product.rating.avgRating && (
+            <Box display={'flex'}>
+              <Text marginRight={1}>Rating:</Text>{' '}
+              <CriticScore score={product.rating.avgRating} />
+            </Box>
+          )}
         </HStack>
         <Heading fontSize={'sm'}>
           {product.productTitle}
