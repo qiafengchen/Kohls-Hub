@@ -5,7 +5,7 @@ import ProductGrid from './components/ProductGrid';
 import GenreList from './components/CategoryList';
 import { Category } from './hooks/useCategories';
 import SortSelector, { Order } from './components/SortSelector';
-import GameHeading from './components/ProductHeading';
+import ProductHeading from './components/ProductHeading';
 
 export interface GameQuery {
   category: Category | null;
@@ -44,7 +44,7 @@ function App() {
 
       <GridItem area="main">
         <Box paddingLeft={2}>
-          <GameHeading gameQuery={gameQuery} />
+          <ProductHeading gameQuery={gameQuery} />
           <Flex marginBottom={5}>
             <SortSelector
               selectedOrdering={gameQuery.ordering}
