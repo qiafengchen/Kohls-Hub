@@ -42,9 +42,6 @@ const ProductCard = ({ product }: Props) => {
           justifyContent={'space-around'}
         >
           <HStack justifyContent={'space-between'} marginBottom={3}>
-            {/* <PlatformIconList
-            platforms={game?.parent_platforms?.map((p) => p.platform)}
-          /> */}
             <Box display={'flex'}>
               {' '}
               <Text marginRight={1}>Price:</Text>{' '}
