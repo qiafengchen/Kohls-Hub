@@ -7,7 +7,7 @@ interface Props {
 }
 const ProductHeading = ({ gameQuery }: Props) => {
   const heading = `${gameQuery.category?.name || ''} ${
-    gameQuery.category?.name || ''
+    gameQuery.searchText || ''
   } Products`;
 
   return (
