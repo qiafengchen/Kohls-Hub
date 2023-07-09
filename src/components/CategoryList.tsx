@@ -12,11 +12,13 @@ import useGenres, { Category } from '../hooks/useCategories';
 interface Props {
   onSelectCategory: (genre: Category) => void;
   selectedCategory: Category | null;
+  onCloseDrawer?: () => void;
 }
 
 const GenreList = ({
   onSelectCategory,
   selectedCategory,
+  onCloseDrawer,
 }: Props): JSX.Element | null => {
   const { categories, error, isLoading } = useGenres();
 
@@ -32,19 +34,13 @@ const GenreList = ({
       <List>
         {categories.map((category) => (
           <ListItem key={category.ID} paddingY="5px">
-            {/* <HStack> */}
-            {/* <Image
-                boxSize="32px"
-                borderRadius={8}
-                objectFit={'cover'}
-                src={getCroppedImageUrl(category.image_background)}
-              /> */}
             <Button
               whiteSpace={'normal'}
               textAlign={'left'}
               display={'block'}
               onClick={() => {
                 onSelectCategory(category);
+                if (onCloseDrawer) onCloseDrawer();
               }}
               fontSize={'16px'}
               fontWeight={
@@ -54,7 +50,6 @@ const GenreList = ({
             >
               {category.name}
             </Button>
-            {/* </HStack> */}
           </ListItem>
         ))}
       </List>

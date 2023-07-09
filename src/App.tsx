@@ -29,6 +29,10 @@ function App() {
           onSearch={(searchText) =>
             setGameQuery((prev) => ({ ...prev, searchText }))
           }
+          selectedCategory={gameQuery.category}
+          onSelectCategory={(category) =>
+            setGameQuery((prev) => ({ ...prev, category }))
+          }
         />
       </GridItem>
       <Show above="lg">
