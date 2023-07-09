@@ -54,7 +54,10 @@ interface Product {
   swatchImages: { color: string; URL: string }[];
   altImages: { altText: string; url: string }[];
 }
-const ProductDetail = ({ selectedProductID, onClose }: Props) => {
+const ProductDetail = ({
+  selectedProductID,
+  onClose,
+}: Props): JSX.Element | null => {
   const toast = useToast();
   const { toggleColorMode, colorMode } = useColorMode();
 
@@ -104,7 +107,6 @@ const ProductDetail = ({ selectedProductID, onClose }: Props) => {
       )
     );
   }, [selectedColor, selectedSize]);
-  console.log(selectedSKU);
 
   if (isLoading) return <Spinner margin={'200px auto'} />;
   if (product)
@@ -302,6 +304,8 @@ const ProductDetail = ({ selectedProductID, onClose }: Props) => {
         </CardBody>
       </Card>
     );
+
+  return null;
 };
 
 export default ProductDetail;
